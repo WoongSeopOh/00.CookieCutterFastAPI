@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 사용하는 모델을 정의
-# Date : 2023-03-23
-# Author: WoongSeopOh(wsoh@vng.kr)
+# Date : {cookiecutter.today}}
+# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 import datetime
 from sqlalchemy import Column, Integer, String, Numeric, Text, DateTime, ForeignKey

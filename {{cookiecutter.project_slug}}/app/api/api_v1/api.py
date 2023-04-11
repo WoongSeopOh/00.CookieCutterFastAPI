@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: Version 1 전체 라우팅 정보
-# Date : 2023-03-07
-# Author: WoongSeopOh(wsoh@vng.kr)
+# Date : {cookiecutter.today}}
+# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 from fastapi import APIRouter
 from app.api.api_v1.endpoints import land

@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 비동기 처리를 위한 Celery App 정의
-# Date : 2023-03-13
-# Author: WoongSeopOh(wsoh@vng.kr)
+# Date : {cookiecutter.today}}
+# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 from celery import Celery
 from app.core.config import celery_config

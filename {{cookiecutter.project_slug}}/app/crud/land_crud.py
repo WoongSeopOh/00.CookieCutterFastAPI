@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 일필지 정보에 대한 CRUD 구성
-# Date : 2023-03-27
-# Author: WoongSeopOh(wsoh@vng.kr)
+# Date : {cookiecutter.today}}
+# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 from sqlalchemy.orm import Session
 from app.models.models import AjstRgnInfo

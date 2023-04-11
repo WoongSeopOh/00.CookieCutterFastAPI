@@ -5,8 +5,8 @@
 #              Email addresses or personal data (name, age, social security number, etc.)
 #              Debug flags
 #              Hosts, URL, URI
-# Date : 2023-03-07
-# Author: WoongSeopOh(wsoh@vng.kr)
+# Date : {cookiecutter.today}}
+# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 from typing import Optional
 from pydantic import BaseSettings, PostgresDsn

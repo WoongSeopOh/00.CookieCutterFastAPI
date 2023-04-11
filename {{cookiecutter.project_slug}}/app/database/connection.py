@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: Database 연결 (Database 연결자 앱 초기화시 생성, 싱글턴 사용)
-# Date : 2023-02-07
-# Author: WoongSeopOh(wsoh@vng.kr)
+# Date : {cookiecutter.today}}
+# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 from fastapi import FastAPI
 from sqlalchemy import create_engine

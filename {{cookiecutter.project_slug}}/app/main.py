@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: FastAPI OpenAPI Broker : main
-# Date : 2023-03-08
-# Author: WoongSeopOh(wsoh@vng.kr)
+# Date : {cookiecutter.today}}
+# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 import uvicorn
 from fastapi import FastAPI
@@ -17,12 +17,12 @@ from app.database.connection import DbClass
 def create_app():
     # 1) FastAPI 객체
     app_obj = FastAPI(
-        title="미래전략사업팀 공용 OpenAPI Service",
-        description="공개된 OpenAPI 서비스를 하나의 Broker 서비스로 구성하여 여러 프로젝트에서 활용 예정",
+        title="{{cookiecutter.project_name}}",
+        description="{{cookiecutter.project_description}}",
         version="0.9.0",
         contact={
-            "name": "WoongSeopOh(Patrick)",
-            "email": "wsoh@vng.kr"
+            "name": "{{cookiecutter.full_name}}",
+            "email": "{{cookiecutter.email}}"
         }
     )
 
