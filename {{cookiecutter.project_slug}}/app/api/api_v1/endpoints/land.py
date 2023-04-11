@@ -119,8 +119,7 @@ def get_landprice_std_by_pnu(bjdcd: str,
 # 개별주택가격 정보 서비스
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @router.get("/pricehouse/{pnu},{stdryear}", response_model=land_schema.LandPriceStdList, name="개별주택가격 조회")
-def get_landprice_house_by_pnu(pnu: str = Query(alias="토지고유번호", regex='\d{19}'),
-                               stdryear: str = Query(alias="주택가격 기준년도", regex='\d{4}')):
+def get_landprice_house_by_pnu(pnu: str, stdryear: str):
     rtn_value = []
     url = api_config.LAND_PRICE_HOUSE_URL
     params = {'serviceKey': key, 'pnu': pnu, 'stdrYear': stdryear, 'numOfRows': rows}

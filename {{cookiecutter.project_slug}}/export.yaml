@@ -29,7 +29,9 @@ dependencies:
   - importlib-metadata=6.3.0=pyha770c72_0
   - importlib_resources=5.12.0=pyhd8ed1ab_0
   - kombu=5.2.4=py310h5588dad_2
+  - krb5=1.20.1=heb0366b_0
   - libffi=3.4.2=h8ffe710_5
+  - libpq=15.2=ha9684e8_0
   - libsqlite=3.40.0=hcfcfb64_0
   - libzlib=1.2.13=hcfcfb64_4
   - mako=1.2.4=pyhd8ed1ab_0
@@ -38,6 +40,7 @@ dependencies:
   - pip=23.0.1=pyhd8ed1ab_0
   - prompt-toolkit=3.0.38=pyha770c72_0
   - prompt_toolkit=3.0.38=hd8ed1ab_0
+  - psycopg2=2.9.3=py310h709a2f1_2
   - pycparser=2.21=pyhd8ed1ab_0
   - pydantic=1.10.7=py310h8d17308_0
   - pyopenssl=23.1.1=pyhd8ed1ab_0
