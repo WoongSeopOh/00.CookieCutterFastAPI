@@ -9,5 +9,6 @@
   "db_url": "192.168.0.10 or demo.vng.co.kr",
   "db_port": "5432 or 51006",
   "db_name": "db_fastapi",
-  "redis_url": "redis://192.168.0.10:6379/"
+  "redis_url": "redis://192.168.0.10:6379/",
+  "python_version": "3.10"
 }
