@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: app에서 활용되는 각종 utility function 정의
-# Date : {cookiecutter.today}}
-# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
+# Date : {{cookiecutter.today}}
+# Author: {{cookiecutter.full_name}} - {{cookiecutter.email}}
 # ---------------------------------------------------------------------------------------------------------------------------------------------------

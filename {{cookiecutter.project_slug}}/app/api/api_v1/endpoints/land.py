@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 필지관련 OpenAPI 정보
-# Date : {cookiecutter.today}}
-# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
+# Date : {{cookiecutter.today}}
+# Author: {{cookiecutter.full_name}} - {{cookiecutter.email}}
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 import datetime
 import requests

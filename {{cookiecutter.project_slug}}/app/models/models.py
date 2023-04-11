@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 사용하는 모델을 정의
-# Date : {cookiecutter.today}}
-# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
+# Date : {{cookiecutter.today}}
+# Author: {{cookiecutter.full_name}} - {{cookiecutter.email}}
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 import datetime
 from sqlalchemy import Column, Integer, String, Numeric, Text, DateTime, ForeignKey

@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: OpenAPI 관련 설정 정보
-# Date : {cookiecutter.today}}
-# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
+# Date : {{cookiecutter.today}}
+# Author: {{cookiecutter.full_name}} - {{cookiecutter.email}}
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # KAKAO API KEY
 KAKAO_APP_KEY = 'KakaoAK 6377c9a823201926bdb40897dbfb035c'

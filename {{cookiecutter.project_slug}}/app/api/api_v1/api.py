@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: Version 1 전체 라우팅 정보
-# Date : {cookiecutter.today}}
-# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
+# Date : {{cookiecutter.today}}
+# Author: {{cookiecutter.full_name}} - {{cookiecutter.email}}
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 from fastapi import APIRouter
 from app.api.api_v1.endpoints import land

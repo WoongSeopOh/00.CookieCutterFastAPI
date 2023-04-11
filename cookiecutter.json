@@ -4,7 +4,7 @@
   "github_username": "WoongSeopOh",
   "project_slug": "03.TaxCalcService",
   "project_name": "{{ cookiecutter.project_slug }}",
-  "project_description": "프로젝트 설명 기술",
+  "project_description": "project description",
   "db_user_name": "forest",
   "db_password": "forest",
   "db_url": "demo.vng.co.kr",
@@ -12,5 +12,5 @@
   "db_name": "forest",
   "redis_url": "redis://192.168.0.10:6379/",
   "python_version": "3.10",
-  "today": "2023-01-01"
+  "today": "yyyy-mm-dd"
 }

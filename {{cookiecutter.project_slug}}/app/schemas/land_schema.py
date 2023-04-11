@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 필지 정보에 대한 스키마
-# Date : {cookiecutter.today}}
-# Author: {cookiecutter.full_name}} - {cookiecutter.email}}  
+# Date : {{cookiecutter.today}}
+# Author: {{cookiecutter.full_name}} - {{cookiecutter.email}}
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 from typing import Optional
 from pydantic import BaseModel, Field
