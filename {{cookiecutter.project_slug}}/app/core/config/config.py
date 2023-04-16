@@ -8,63 +8,60 @@
 # Date : {{cookiecutter.today}}
 # Author: {{cookiecutter.full_name}} - {{cookiecutter.email}}
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
-from typing import Optional
+import os
 from pydantic import BaseSettings, PostgresDsn
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # GlobalSettings -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 공통 셋팅 정보 관리
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class GlobalSettings(BaseSettings):
-    # TODO: 향후에 정확한 환경변수 설정을 통해서 로컬, 개발환경, 운영환경을 구분한다.
-    ENV_STATE: str = 'tempState'
+    FASTAPI_ENV_STATE: str = os.getenv('FASTAPI_ENV_STATE')
 
     API_VERSION: str = "/api/v1"
 
     # 데이터베이스 관련 정보
     BASE_DIR: str = None
-    # local
-    DB_CON_STRING: PostgresDsn = 'postgresql+psycopg2://{{cookiecutter.db_user_name}}:{{cookiecutter.db_password}}@{{cookiecutter.db_url}}:{{cookiecutter.db_port}}/{{cookiecutter.db_name}}'
-    # prod
-    # DB_CON_STRING: PostgresDsn = 'postgresql+psycopg2://fastapi:fastapi@172.17.0.3:5432/db_fastapi'
-    DB_POOL_RECYCLE: int = 900
     DB_ECHO: bool = True
-
-    # .env 파일 정의 (APP_ENV 값은 .env 파일에 정의됨)
-    class Config:
-        env_file = '.env'
+    DB_POOL_RECYCLE: int = 900
 
 
 # DevSettings -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 개발환경에 특화된 셋팅 정보
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-class DevSettings(GlobalSettings):
+class LocalSettings(GlobalSettings):
+    DB_CON_STRING: PostgresDsn = "postgresql+psycopg2://forest:forest@demo.vng.co.kr:59401/forest"
+
     class Config:
-        env_file = 'dev.env'
+        env_file = 'local.env'
 
 
 # ProdSettings -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 운영환경에 특화된 셋팅 정보
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class ProdSettings(GlobalSettings):
+    DB_CON_STRING: PostgresDsn = "postgresql+psycopg2://forest:forest@demo.vng.co.kr:59402/forest"
+
     class Config:
         env_file = 'prod.env'
 
 
 # FactorySettings -------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Description: 설치된 서버의 환경변수에 따라 해당 값을 동적으로 가져옴
-#              todo: 환경변수 셋팅이 필수 (환경변수가 없으면 GlobalSettings에서 정하고 있는 .env 파일에서 가져옴)
 #              Hint: .env와 환경변수에 동일한 변수가 선언되어 있다면 환경변수 설정값이 항상 우선시됨.
+#              Hint: .env file에 정의한 내용은 os.getenv('key') 형식으로 접근한다.
 #              Hint: 파일에 정의된 변수와 현재 클래스 변수명이 같으면 해당 변수에 env 값이 바인딩 됨..
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class FactorySettings:
     @staticmethod
     def load():
         # 인스턴스의 변수 (스태틱과 다름.. 괄호.. 주의!!)
-        env_state = GlobalSettings().ENV_STATE
-        if env_state == 'dev':
-            # 인스턴스를 리턴
-            return DevSettings()
+        env_state = GlobalSettings().FASTAPI_ENV_STATE
+        if env_state == 'local':
+            return LocalSettings()
         elif env_state == 'prod':
             return ProdSettings()
         else:

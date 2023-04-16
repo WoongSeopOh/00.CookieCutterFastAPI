@@ -6,9 +6,9 @@
 import uvicorn
 from fastapi import FastAPI
 from app.api.api_v1 import api
-from dataclasses import asdict
 from app.core.config.config import settings
 from app.database.connection import DbClass
+from starlette.middleware.cors import CORSMiddleware
 
 
 # create_app -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -33,16 +33,17 @@ def create_app():
     # 3) Celery App / Redis 정의
 
     # 4) 미들웨어 정의
-    # origins = [
-    #     "http://127.0.0.1:5173"
-    # ]
-    # fastapi_obj.add_middleware(
-    #     CORSMiddleware,
-    #     allow_orgins=origins,
-    #     allow_credentials=True,
-    #     allow_method=["*"],
-    #     allow_headers=["*"],
-    # )
+    origins = [
+        "*"
+    ]
+    # 개발용으로 전체 URL 허용
+    app_obj.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
     # 5) 라우터 정의
     app_obj.include_router(api.api_router)
@@ -58,4 +59,4 @@ app = create_app()
 # Entry Point: 서버 자동 실행
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-    uvicorn.run("main:app", port=8000, reload=True, log_level="info")
+    uvicorn.run("app.main:app", port=8080, reload=True, log_level="info",  host="0.0.0.0")
