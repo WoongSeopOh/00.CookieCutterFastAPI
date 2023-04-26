@@ -44,7 +44,6 @@ def create_app():
         allow_methods=["*"],
         allow_headers=["*"],
     )
-
     # 5) 라우터 정의
     app_obj.include_router(api.api_router)
 
